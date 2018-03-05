@@ -1,14 +1,19 @@
 <h2>Sample Data</h2>
 
 
-<table>
+<!-- <table>
     <tbody data-bind="foreach: chosenData">
         <tr>
             <td data-bind="text: name"></td>
             <td data-bind="text: title().data"></td>
         </tr>    
     </tbody>
-</table>
+</table> -->
+
+<ul data-bind="foreach: testCaseData">
+    <li data-bind="text: title"></li>
+
+</ul>
 
 <script src="js/lib/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

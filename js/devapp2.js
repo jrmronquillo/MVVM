@@ -4,10 +4,10 @@
 
 
 // Class to represent a row in the seat reservations grid
-function DataClass(name, name2) {
+function DataClass(name2) {
     var self = this;
-    self.name = name;
-    self.title = ko.observable(name2);
+    //self.name = name;
+    self.title = ko.observable(name2.data);
     //self.title = name2;
     
 }
@@ -27,13 +27,16 @@ $.ajax({
 
             console.log(jsonPdata.dataList[0].data);
 
-            this.appError = ko.observable();  
+            this.testCaseData = ko.observableArray([]);
 
             // Non-editable catalog data - would come from the server
             self.jsonDataFromServer = [
                 { data: "test_title_1" },
             ];    
 
+            jsonPdata.dataList.forEach(function(item){
+                self.testCaseData.push( new DataClass ( item ) );
+            })
             // console.log(self.jsonDataFromServer[0]);
             // Editable data
             self.chosenData = ko.observableArray([
@@ -46,6 +49,7 @@ $.ajax({
     },
     error: function(failData){
         alert(failData);
+        alert("Could not retrieve JSON data");
     }
 
 
