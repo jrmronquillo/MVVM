@@ -1,6 +1,8 @@
 
 /*jshint esversion: 6 */
 
+
+
 // Class to represent a row in the seat reservations grid
 function DataClass(name, name2) {
     var self = this;
