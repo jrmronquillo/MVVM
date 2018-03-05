@@ -1,6 +1,8 @@
 
 /*jshint esversion: 6 */
 
+
+
 // Class to represent a row in the seat reservations grid
 function DataClass(name, name2) {
     var self = this;
@@ -12,7 +14,7 @@ function DataClass(name, name2) {
 
 // Note: that the getJSON wraps the entire javascript body
 //$.getJSON("js/dataList.json", function( jsonData ){
-$.getJSON("http://10.23.223.39:5000/reporting/JSON?callback=?", function( jsonData ){
+$.getJSON("http://10.23.223.39:5000/reporting/JSON", function( jsonData ){
         const DataClass2 = function(data){
             this.name = ko.observable(data.title);
         };
